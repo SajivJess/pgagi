@@ -249,16 +249,16 @@ class DocumentProcessor:
         for dist, idx in zip(distances[0], indices[0]):
             if idx < len(self.chunks):
                 vector_score = float(1 / (1 + dist))
-                bm25_score = bm25_scores[idx] if bm25_scores else 0
+                bm25_score = float(bm25_scores[int(idx)]) if len(bm25_scores) > 0 and int(idx) < len(bm25_scores) else 0.0
                 
                 # Weighted combination: 60% vector, 40% BM25
-                combined_score = 0.6 * vector_score + 0.4 * (bm25_score / 10 if bm25_score > 0 else 0)
+                combined_score = 0.6 * vector_score + 0.4 * (bm25_score / 10.0 if bm25_score > 0.0 else 0.0)
                 
-                combined_results[idx] = {
-                    'chunk': self.chunks[idx],
-                    'score': combined_score,
-                    'vector_score': vector_score,
-                    'bm25_score': float(bm25_score) if bm25_scores else 0
+                combined_results[int(idx)] = {
+                    'chunk': self.chunks[int(idx)],
+                    'score': float(combined_score),
+                    'vector_score': float(vector_score),
+                    'bm25_score': float(bm25_score)
                 }
         
         # Sort by combined score
@@ -271,18 +271,21 @@ class DocumentProcessor:
             
             # Apply document filter
             if filters and filters.get('document'):
-                if chunk['filename'] != filters['document']:
+                if str(chunk['filename']) != str(filters['document']):
                     continue
             
             # Apply page filter
             if filters and filters.get('page_range'):
-                page_min, page_max = filters['page_range']
-                if not (page_min <= chunk['page_number'] <= page_max):
+                page_min, page_max = int(filters['page_range'][0]), int(filters['page_range'][1])
+                page_num = int(chunk['page_number'])
+                if not (page_min <= page_num <= page_max):
                     continue
             
             # Apply confidence filter
             if filters and filters.get('min_confidence'):
-                if data['score'] < filters['min_confidence']:
+                score = float(data['score'])
+                min_conf = float(filters['min_confidence'])
+                if score < min_conf:
                     continue
             
             chunk["relevance_score"] = data['score']
