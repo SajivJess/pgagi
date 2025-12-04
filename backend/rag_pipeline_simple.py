@@ -124,8 +124,8 @@ Answer:"""
                         
                 except Exception as gemini_error:
                     logger.error(f"Gemini API error: {str(gemini_error)}")
-                    # Return context as fallback instead of raising
-                    answer = f"I encountered an error generating the response. Here's the relevant information from the documents:\n\n{context[:500]}..."
+                    # Return formatted context as fallback
+                    answer = f"Based on the retrieved documents:\n\n{context[:800]}\n\n*Note: AI response generation is temporarily unavailable. The information above is directly from your documents.*"
             else:
                 answer = f"The Gemini API is not configured. Here's the relevant information I found:\n\n{context[:500]}..."
             
