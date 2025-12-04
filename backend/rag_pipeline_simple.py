@@ -117,17 +117,17 @@ Answer:"""
                         else:
                             # Safety filter or other blocking
                             logger.warning(f"Gemini blocked response. Finish reason: {candidate.finish_reason}")
-                            answer = f"I apologize, but I couldn't generate a complete response for this query. The information from the documents shows:\n\n{context[:500]}...\n\nPlease try rephrasing your question."
+                            answer = f"Based on the retrieved documents:\n\n{context[:800]}\n\n*Note: The AI response was blocked by content filters. The information above is directly from your documents.*"
                     else:
                         logger.warning("Gemini returned empty response")
-                        answer = f"I couldn't generate a response. Here's the relevant context from the documents:\n\n{context[:500]}..."
+                        answer = f"Based on the retrieved documents:\n\n{context[:800]}\n\n*Note: AI response generation returned empty. The information above is directly from your documents.*"
                         
                 except Exception as gemini_error:
                     logger.error(f"Gemini API error: {str(gemini_error)}")
                     # Return formatted context as fallback
                     answer = f"Based on the retrieved documents:\n\n{context[:800]}\n\n*Note: AI response generation is temporarily unavailable. The information above is directly from your documents.*"
             else:
-                answer = f"The Gemini API is not configured. Here's the relevant information I found:\n\n{context[:500]}..."
+                answer = f"Based on the retrieved documents:\n\n{context[:800]}\n\n*Note: AI response generation is not configured. The information above is directly from your documents.*"
             
             # Format sources with enhanced information
             sources = [
