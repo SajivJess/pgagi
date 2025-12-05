@@ -17,7 +17,7 @@ class StructuredExtractor:
     
     def __init__(self):
         self.client = None
-        gemini_key = os.getenv("GEMINI_API_KEY", "AIzaSyDRHz6iNnjkBgHQN9putbHHPdb0H0kkuqI")
+        gemini_key = os.getenv("GEMINI_API_KEY")
         
         if gemini_key and gemini_key.startswith("AIza") and GEMINI_AVAILABLE:
             try:

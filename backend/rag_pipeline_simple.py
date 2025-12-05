@@ -21,7 +21,7 @@ class RAGPipeline:
     
     def __init__(self, doc_processor=None):
         # Try Gemini first, fall back to OpenAI
-        gemini_key = os.getenv("GEMINI_API_KEY", "AIzaSyDRHz6iNnjkBgHQN9putbHHPdb0H0kkuqI")
+        gemini_key = os.getenv("GEMINI_API_KEY")
         
         # Filter out placeholder values
         if gemini_key and "YOUR_" not in gemini_key and gemini_key.startswith("AIza"):
