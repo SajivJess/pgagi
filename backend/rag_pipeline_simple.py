@@ -100,8 +100,7 @@ Answer:"""
                         generation_config={
                             'temperature': 0.3,
                             'max_output_tokens': 1024,
-                        },
-                        request_options={'timeout': 30}
+                        }
                     )
                     
                     # Check if response has valid content
