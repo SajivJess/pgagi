@@ -26,8 +26,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Project specific
-uploads/
-chroma_db/
+candidate_data/
+*.json
 persistent_data/
 *.pdf
 *.faiss

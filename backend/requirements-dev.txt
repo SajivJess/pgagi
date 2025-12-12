@@ -1,2 +1,0 @@
-# Additional dependency for generating sample PDFs
-reportlab==4.0.7
