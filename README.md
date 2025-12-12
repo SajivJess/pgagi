@@ -3,6 +3,11 @@
 > AI-powered recruitment chatbot for initial candidate screening  
 > **AI/ML Intern Assignment Submission**
 
+🔗 **Live Demo**: [https://sajiv-pgagi.streamlit.app/](https://sajiv-pgagi.streamlit.app/)  
+📂 **GitHub Repository**: [https://github.com/SajivJess/pgagi](https://github.com/SajivJess/pgagi)  
+📹 **Demo Video**: [Watch on Google Drive](https://drive.google.com/drive/folders/1eExp0NQasp0OuthH43mS301uwounHG1X?usp=sharing)  
+📄 **Project Documentation**: [Google Docs](https://docs.google.com/document/d/1VDqOCXWuSl5CQ7Igis1YnlLBARgDiN7ysi7Vfy2XVeI/edit?usp=sharing)
+
 ---
 
 ## 📋 Overview
@@ -61,8 +66,8 @@ TalentScout Hiring Assistant is an intelligent chatbot that automates the initia
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/SajivJess/Constructure-AI---Project-Brain.git
-cd "Constructure-AI---Project-Brain"
+git clone https://github.com/SajivJess/pgagi.git
+cd pgagi
 ```
 
 2. **Install dependencies**
@@ -364,7 +369,9 @@ CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501"]
 AI/ML Intern Candidate
 
 - GitHub: [@SajivJess](https://github.com/SajivJess)
-- Project: [Constructure-AI---Project-Brain](https://github.com/SajivJess/Constructure-AI---Project-Brain)
+- Project Repository: [pgagi](https://github.com/SajivJess/pgagi)
+- Live Application: [https://sajiv-pgagi.streamlit.app/](https://sajiv-pgagi.streamlit.app/)
+- Demo Video: [Google Drive](https://drive.google.com/drive/folders/1eExp0NQasp0OuthH43mS301uwounHG1X?usp=sharing)
 
 ---
 
@@ -399,7 +406,12 @@ For questions or issues:
 
 ---
 
-**Live Demo Video**: [Coming Soon - LOOM recording]
+## 🎬 Demo & Links
+
+- **Live Application**: [https://sajiv-pgagi.streamlit.app/](https://sajiv-pgagi.streamlit.app/)
+- **GitHub Repository**: [https://github.com/SajivJess/pgagi](https://github.com/SajivJess/pgagi)
+- **Demo Video**: [Watch Full Walkthrough](https://drive.google.com/drive/folders/1eExp0NQasp0OuthH43mS301uwounHG1X?usp=sharing)
+- **Project Documentation**: [Google Docs](https://docs.google.com/document/d/1VDqOCXWuSl5CQ7Igis1YnlLBARgDiN7ysi7Vfy2XVeI/edit?usp=sharing)
 
 **Submission Date**: December 12, 2025  
 **Assignment Deadline**: 48 hours from receipt
